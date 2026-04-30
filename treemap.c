@@ -59,7 +59,7 @@ Pair * searchTreeMap(TreeMap * tree, void* key) {
     while (aux->left == NULL && aux->right == NULL){
         if (is_equal(tree, aux->pair->key, key)) {
             tree->current = aux;
-            print(""\n ENCONTRADO \n”);
+            print("\n ENCONTRADO \n”);
             return aux->pair;
         }
         if (tree->lower_than(aux->pair->key,key)){

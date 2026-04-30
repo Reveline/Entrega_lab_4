@@ -48,3 +48,30 @@ treemap.c:62:37: error: stray ‘\342’ in program
    62 |             print(""\n ENCONTRADO \n<U+201D>);
       |                                     ^~~~~~~~
 8dec4de
+Thu Apr 30 11:48:44 PM UTC 2026: 
+ treemap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:4:
+treemap.c: In function ‘searchTreeMap’:
+treemap.c:62:13: error: implicit declaration of function ‘print’; did you mean ‘printf’? [-Wimplicit-function-declaration]
+   62 |             print("\n ENCONTRADO \n”);
+      |             ^~~~~
+      |             printf
+treemap.c:62:19: error: missing terminating " character [-Werror]
+   62 |             print("\n ENCONTRADO \n”);
+      |                   ^
+treemap.c:62:19: error: missing terminating " character
+   62 |             print("\n ENCONTRADO \n”);
+      |                   ^~~~~~~~~~~~~~~~~~~~
+treemap.c:63:13: error: expected expression before ‘return’
+   63 |             return aux->pair;
+      |             ^~~~~~
+treemap.c:63:30: error: expected ‘;’ before ‘}’ token
+   63 |             return aux->pair;
+      |                              ^
+      |                              ;
+   64 |         }
+      |         ~                     
+cc1: all warnings being treated as errors
+86d381d
