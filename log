@@ -18,3 +18,9 @@ treemap.c:59:43: error: lvalue required as left operand of assignment
    59 |     while (aux->left = NULL && aux->right = NULL){
       |                                           ^
 b3d6c4f
+Thu Apr 30 11:47:22 PM UTC 2026: 
+ treemap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  4|7
+total_score: 5/60
+d2f88b4
