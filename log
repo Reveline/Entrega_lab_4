@@ -24,3 +24,27 @@ Thu Apr 30 11:47:22 PM UTC 2026:
  tests:  4|7
 total_score: 5/60
 d2f88b4
+Thu Apr 30 11:48:34 PM UTC 2026: 
+ treemap.c | 1 +
+ 1 file changed, 1 insertion(+)
+Compilation failed
+In file included from test.c:4:
+treemap.c: In function ‘searchTreeMap’:
+treemap.c:62:13: error: implicit declaration of function ‘print’; did you mean ‘printf’? [-Wimplicit-function-declaration]
+   62 |             print(""\n ENCONTRADO \n”);
+      |             ^~~~~
+      |             printf
+treemap.c:62:21: error: stray ‘\’ in program
+   62 |             print(""\n ENCONTRADO \n”);
+      |                     ^
+treemap.c:62:21: error: expected ‘)’ before ‘n’
+   62 |             print(""\n ENCONTRADO \n”);
+      |                  ~  ^~
+      |                     )
+treemap.c:62:35: error: stray ‘\’ in program
+   62 |             print(""\n ENCONTRADO \n”);
+      |                                   ^
+treemap.c:62:37: error: stray ‘\342’ in program
+   62 |             print(""\n ENCONTRADO \n<U+201D>);
+      |                                     ^~~~~~~~
+8dec4de
