@@ -56,13 +56,12 @@ TreeMap * createTreeMap(int (*lower_than) (void* key1, void* key2)) {
 
 Pair * searchTreeMap(TreeMap * tree, void* key) {
     TreeNode * aux = tree->root;
-    while (aux->left == NULL && aux->right == NULL){
-        if (is_equal(tree, aux->pair->key, key) == 1) {
+    while (aux->left != NULL && aux->right != NULL){ // Mientras el nodo tenga decendencia
+        if (is_equal(tree, aux->pair->key, key)) {
             tree->current = aux;
-            printf("\n ENCONTRADO \n");
             return aux->pair;
         }
-        if (tree->lower_than(aux->pair->key,key) == 1){
+        if (tree->lower_than(aux->pair->key,key)){
             aux = aux->left;
         } else {
             aux = aux->right;
