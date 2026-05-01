@@ -155,7 +155,7 @@ void removeNode(TreeMap * tree, TreeNode* node) {
         return;
     }
 
-    Tree_Node* successor = minimum(node->right);
+    TreeNode* successor = minimum(node->right);
     node->pair->key = successor->pair->key;
     node->pair->value = successor->pair->value;
     removeNode(tree, successor);
