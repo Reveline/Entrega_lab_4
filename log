@@ -380,3 +380,35 @@ treemap.c:136:43: note: expected ‘TreeNode *’ but argument is of type ‘int
       |                                 ~~~~~~~~~~^~~~
 cc1: all warnings being treated as errors
 03086e8
+Fri May  1 06:19:58 PM UTC 2026: 
+ treemap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:4:
+treemap.c: In function ‘removeNode’:
+treemap.c:149:13: error: suggest parentheses around assignment used as truth value [-Werror=parentheses]
+  149 |         if (node = node->parent->left){
+      |             ^~~~
+treemap.c:158:5: error: unknown type name ‘Tree_Node’; did you mean ‘TreeNode’?
+  158 |     Tree_Node* successor = minimum(node->right);
+      |     ^~~~~~~~~
+      |     TreeNode
+treemap.c:158:28: error: initialization of ‘int *’ from incompatible pointer type ‘TreeNode *’ [-Wincompatible-pointer-types]
+  158 |     Tree_Node* successor = minimum(node->right);
+      |                            ^~~~~~~
+treemap.c:159:32: error: request for member ‘pair’ in something not a structure or union
+  159 |     node->pair->key = successor->pair->key;
+      |                                ^~
+treemap.c:160:34: error: request for member ‘pair’ in something not a structure or union
+  160 |     node->pair->value = successor->pair->value;
+      |                                  ^~
+treemap.c:161:22: error: passing argument 2 of ‘removeNode’ from incompatible pointer type [-Wincompatible-pointer-types]
+  161 |     removeNode(tree, successor);
+      |                      ^~~~~~~~~
+      |                      |
+      |                      int *
+treemap.c:136:43: note: expected ‘TreeNode *’ but argument is of type ‘int *’
+  136 | void removeNode(TreeMap * tree, TreeNode* node) {
+      |                                 ~~~~~~~~~~^~~~
+cc1: all warnings being treated as errors
+7ef7e74

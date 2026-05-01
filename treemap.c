@@ -143,7 +143,7 @@ void removeNode(TreeMap * tree, TreeNode* node) {
     }
     
     if (node->left == NULL || node->right == NULL){
-        TreeNode*  child = (temp->left != NULL) ? temp->left : temp->right; // Hijo izq o der del nodo
+        TreeNode*  child = (node->left != NULL) ? node->left : node->right; // Hijo izq o der del nodo
         
         if (node == tree->root) child = tree->root;
         if (node = node->parent->left){
