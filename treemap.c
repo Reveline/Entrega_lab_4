@@ -216,7 +216,8 @@ Pair * nextTreeMap(TreeMap * tree) {
     while(aux->right != NULL){
         aux = aux->right;
     } 
-    
+    aux = minimum(aux)
+        
     if (aux->pair == NULL) return NULL;
     
     tree->current = aux;
@@ -233,6 +234,7 @@ Pair * upperBound(TreeMap * tree, void* key) {
     
     TreeNode * aux = tree->root;
     TreeNode * ub_node = NULL;
+    
     while (aux != NULL){ // Mientras el nodo axuiliar exista
         if (is_equal(tree, aux->pair->key, key)) {
             tree->current = aux;
@@ -247,7 +249,7 @@ Pair * upperBound(TreeMap * tree, void* key) {
 
     } // while (aux->left = NULL && aux->right = NULL)...
     
-    if (ub_node == NULL) return NULL;
+    if (ub_node == NULL) return NULL; // Comprobacion, si ub_node es null, retornar su par tendria error de segmentacion 
     return ub_node->pair;
     
 }
