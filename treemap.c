@@ -78,12 +78,7 @@ Pair * searchTreeMap(TreeMap * tree, void* key) {
 
 void insertTreeMap(TreeMap * tree, void* key, void * value) {
     TreeNode * aux = tree->root;
-    TreeNode* new_node = malloc(sizeof(TreeNode));
-    
-    new_node->key = key;
-    new_node->value = value;
-    new_node->left = NULL;
-    new_node->right = NULL; 
+    TreeNode* new_node = createTreeNode(key, value);
 
     
     while (aux != NULL){ // Mientras el nodo axuiliar exista
