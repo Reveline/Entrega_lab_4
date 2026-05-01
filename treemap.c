@@ -232,7 +232,7 @@ Pair * upperBound(TreeMap * tree, void* key) {
     if (tree == NULL || tree->root == NULL) return NULL;
     
     TreeNode * aux = tree->root;
-    TreeNode * ub_node = tree->root;
+    TreeNode * ub_node = NULL;
     while (aux != NULL){ // Mientras el nodo axuiliar exista
         if (is_equal(tree, aux->pair->key, key)) {
             tree->current = aux;
@@ -247,6 +247,7 @@ Pair * upperBound(TreeMap * tree, void* key) {
 
     } // while (aux->left = NULL && aux->right = NULL)...
     
+    if (ub_node == NULL) return NULL;
     return ub_node->pair;
     
 }
