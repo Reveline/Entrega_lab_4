@@ -137,6 +137,8 @@ void removeNode(TreeMap * tree, TreeNode* node) {
     if (tree == NULL || tree->root == NULL) return;
     if (node == NULL) return;
 
+    // Recuerda actualizar los punteros padre, si no puede quedar un puntero flotante o romper la logica de un nodo con hijo
+    
     if (node->left == NULL && node->right == NULL){
         if (node == tree->root) tree->root = NULL;
         
@@ -227,7 +229,25 @@ Pair * nextTreeMap(TreeMap * tree) {
 // Finalmente retorne el par del nodo ub_node.
 
 Pair * upperBound(TreeMap * tree, void* key) {
-    return NULL;
+
+    TreeNode * aux = tree->root;
+    TreeNode * ub_node = NULL;
+    while (aux != NULL){ // Mientras el nodo axuiliar exista
+        if (is_equal(tree, aux->pair->key, key)) {
+            tree->current = aux;
+            return aux->pair;
+        }
+        if (tree->lower_than(key, aux->pair->key)){
+            ub_node = aux; // se guarda cada nodo que sea mayor a key
+            aux = aux->left;
+        } else {
+            aux = aux->right;
+        }
+
+    } // while (aux->left = NULL && aux->right = NULL)...
+    
+    return ub_node;
+    
 }
 
 
