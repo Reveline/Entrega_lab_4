@@ -213,9 +213,9 @@ Pair * nextTreeMap(TreeMap * tree) {
     TreeNode * aux = tree->current;
     if (aux == NULL) return NULL;
     
-    while(aux->right != NULL){
-        aux = aux->right;
-    } 
+    
+    aux = aux->right;
+    
     aux = minimum(aux);
         
     if (aux->pair == NULL) return NULL;
