@@ -220,9 +220,10 @@ Pair * nextTreeMap(TreeMap * tree) {
         while(aux->parent != NULL && aux->parent->right == aux){
             aux = aux->parent;
         }
+        aux = aux->parent;
     }
         
-    if (aux->pair == NULL) return NULL;
+    if (aux == NULL) return NULL;
     
     tree->current = aux;
     return aux->pair;
