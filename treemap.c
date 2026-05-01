@@ -229,7 +229,8 @@ Pair * nextTreeMap(TreeMap * tree) {
 // Finalmente retorne el par del nodo ub_node.
 
 Pair * upperBound(TreeMap * tree, void* key) {
-
+    if (tree == NULL || tree->root == NULL) return NULL;
+    
     TreeNode * aux = tree->root;
     TreeNode * ub_node = tree->root;
     while (aux != NULL){ // Mientras el nodo axuiliar exista
