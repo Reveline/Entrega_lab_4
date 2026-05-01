@@ -213,10 +213,14 @@ Pair * nextTreeMap(TreeMap * tree) {
     TreeNode * aux = tree->current;
     if (aux == NULL) return NULL;
     
-    
-    aux = aux->right;
-    
-    aux = minimum(aux);
+    if(aux->right != NULL) {
+        aux = getMinimumNode(aux->right);
+    } else {
+        // Si es el nodo es el hijo izquiero, entonces su padre sera el primer numero mayor que el (creo)
+        while(aux->parent != NULL && aux->parent->right == aux){
+            aux = aux->parent;
+        }
+    }
         
     if (aux->pair == NULL) return NULL;
     

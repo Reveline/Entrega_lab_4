@@ -541,3 +541,16 @@ Fri May  1 11:02:31 PM UTC 2026:
  1 file changed, 2 insertions(+), 2 deletions(-)
  tests:  0|0
 fe0714a
+Fri May  1 11:11:29 PM UTC 2026: 
+ treemap.c | 12 ++++++++----
+ 1 file changed, 8 insertions(+), 4 deletions(-)
+Compilation failed
+In file included from test.c:4:
+treemap.c: In function ‘nextTreeMap’:
+treemap.c:217:15: error: implicit declaration of function ‘getMinimumNode’ [-Wimplicit-function-declaration]
+  217 |         aux = getMinimumNode(aux->right);
+      |               ^~~~~~~~~~~~~~
+treemap.c:217:13: error: assignment to ‘TreeNode *’ from ‘int’ makes pointer from integer without a cast [-Wint-conversion]
+  217 |         aux = getMinimumNode(aux->right);
+      |             ^
+7190f31
