@@ -85,7 +85,6 @@ void insertTreeMap(TreeMap * tree, void* key, void * value) {
     new_node->left = NULL;
     new_node->right = NULL; 
 
-    int key_is_lower_than_aux = -1;
     
     while (aux != NULL){ // Mientras el nodo axuiliar exista
         if (is_equal(tree, aux->pair->key, key)) {

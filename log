@@ -139,3 +139,16 @@ treemap.c:88:9: error: unused variable ‘key_is_lower_than_aux’ [-Werror=unus
       |         ^~~~~~~~~~~~~~~~~~~~~
 cc1: all warnings being treated as errors
 8eaebd6
+Fri May  1 12:18:33 AM UTC 2026: 
+ treemap.c | 1 -
+ 1 file changed, 1 deletion(-)
+Compilation failed
+In file included from test.c:4:
+treemap.c: In function ‘insertTreeMap’:
+treemap.c:83:13: error: ‘TreeNode’ has no member named ‘key’
+   83 |     new_node->key = key;
+      |             ^~
+treemap.c:84:13: error: ‘TreeNode’ has no member named ‘value’
+   84 |     new_node->value = value;
+      |             ^~
+a1fc0e4
