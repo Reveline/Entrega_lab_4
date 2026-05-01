@@ -254,3 +254,51 @@ Fri May  1 01:46:42 AM UTC 2026:
  tests:  18|3
 total_score: 33/60
 4375f97
+Fri May  1 06:18:33 PM UTC 2026: 
+ treemap.c | 26 ++++++++++++++++++++++++++
+ 1 file changed, 26 insertions(+)
+Compilation failed
+In file included from test.c:4:
+treemap.c: In function ‘removeNode’:
+treemap.c:146:29: error: ‘temp’ undeclared (first use in this function)
+  146 |         TreeNode*  child = (temp->left != NULL) ? temp->left : temp->right; // Hijo izq o der del nodo
+      |                             ^~~~
+treemap.c:146:29: note: each undeclared identifier is reported only once for each function it appears in
+treemap.c:149:13: error: suggest parentheses around assignment used as truth value [-Werror=parentheses]
+  149 |         if (node = node->parent->left){
+      |             ^~~~
+treemap.c:158:5: error: unknown type name ‘Tree_Node’; did you mean ‘TreeNode’?
+  158 |     Tree_Node* successor = minimum(node->right);
+      |     ^~~~~~~~~
+      |     TreeNode
+treemap.c:158:28: error: initialization of ‘int *’ from incompatible pointer type ‘TreeNode *’ [-Wincompatible-pointer-types]
+  158 |     Tree_Node* successor = minimum(node->right);
+      |                            ^~~~~~~
+treemap.c:159:9: error: ‘TreeNode’ has no member named ‘key’
+  159 |     node->key = successor->key;
+      |         ^~
+treemap.c:159:26: error: request for member ‘key’ in something not a structure or union
+  159 |     node->key = successor->key;
+      |                          ^~
+treemap.c:160:9: error: ‘TreeNode’ has no member named ‘value’
+  160 |     node->value = successor->value;
+      |         ^~
+treemap.c:160:28: error: request for member ‘value’ in something not a structure or union
+  160 |     node->value = successor->value;
+      |                            ^~
+treemap.c:161:16: error: passing argument 1 of ‘removeNode’ from incompatible pointer type [-Wincompatible-pointer-types]
+  161 |     removeNode(successor);
+      |                ^~~~~~~~~
+      |                |
+      |                int *
+treemap.c:136:27: note: expected ‘TreeMap *’ but argument is of type ‘int *’
+  136 | void removeNode(TreeMap * tree, TreeNode* node) {
+      |                 ~~~~~~~~~~^~~~
+treemap.c:161:5: error: too few arguments to function ‘removeNode’
+  161 |     removeNode(successor);
+      |     ^~~~~~~~~~
+treemap.c:136:6: note: declared here
+  136 | void removeNode(TreeMap * tree, TreeNode* node) {
+      |      ^~~~~~~~~~
+cc1: all warnings being treated as errors
+627dc78
