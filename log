@@ -233,3 +233,13 @@ Fri May  1 01:43:10 AM UTC 2026:
  tests:  17|3
 total_score: 30/60
 f296464
+Fri May  1 01:46:01 AM UTC 2026: 
+ treemap.c | 19 +++++++++++++++++--
+ 1 file changed, 17 insertions(+), 2 deletions(-)
+Compilation failed
+In file included from test.c:4:
+treemap.c: In function ‘firstTreeMap’:
+treemap.c:166:5: error: expected ‘;’ before ‘tree’
+  166 |     tree->current = aux;
+      |     ^~~~
+ca3e074
