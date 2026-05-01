@@ -122,3 +122,20 @@ Thu Apr 30 11:58:39 PM UTC 2026:
  tests:  11|6
 total_score: 15/60
 ebfec22
+Fri May  1 12:18:23 AM UTC 2026: 
+ treemap.c | 33 ++++++++++++++++++++++++++++++++-
+ 1 file changed, 32 insertions(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:4:
+treemap.c: In function ‘insertTreeMap’:
+treemap.c:83:13: error: ‘TreeNode’ has no member named ‘key’
+   83 |     new_node->key = key;
+      |             ^~
+treemap.c:84:13: error: ‘TreeNode’ has no member named ‘value’
+   84 |     new_node->value = value;
+      |             ^~
+treemap.c:88:9: error: unused variable ‘key_is_lower_than_aux’ [-Werror=unused-variable]
+   88 |     int key_is_lower_than_aux = -1;
+      |         ^~~~~~~~~~~~~~~~~~~~~
+cc1: all warnings being treated as errors
+8eaebd6
