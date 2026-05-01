@@ -79,6 +79,9 @@ Pair * searchTreeMap(TreeMap * tree, void* key) {
 //void insert_space_found(TreeNode * aux, TreeNode* new_node){
 
 void insertTreeMap(TreeMap * tree, void* key, void * value) {
+    if (tree == NULL || tree->root == NULL) return;
+    if (key == NULL || value == NULL) return;
+    
     TreeNode * aux = tree->root;
     TreeNode* new_node = createTreeNode(key, value);
 
@@ -118,7 +121,7 @@ TreeNode * minimum(TreeNode * x){
     if (aux == NULL) return NULL;
     while(aux->left != NULL){
         aux = aux->left;
-    }
+    } 
     return aux;
 }
 
@@ -149,7 +152,17 @@ void eraseTreeMap(TreeMap * tree, void* key){
 // Recuerde actualizar este puntero.
 
 Pair * firstTreeMap(TreeMap * tree) {
-    return NULL;
+    if (tree == NULL || tree->root == NULL) return;
+    
+    TreeNode * aux = tree->root;
+    if (aux == NULL) return NULL;
+    
+    while(aux->left != NULL){
+        aux = aux->left;
+    } 
+    
+    if (aux->pair == NULL) return NULL;
+    return aux->pair;
 }
 
 Pair * nextTreeMap(TreeMap * tree) {
