@@ -146,7 +146,7 @@ void removeNode(TreeMap * tree, TreeNode* node) {
         TreeNode*  child = (node->left != NULL) ? node->left : node->right; // Hijo izq o der del nodo
         
         if (node == tree->root) child = tree->root;
-        if (node = node->parent->left){
+        if (node == node->parent->left){
             node->parent->left = child;
         } else {
             node->parent->right = child;
