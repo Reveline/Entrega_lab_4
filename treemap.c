@@ -231,7 +231,7 @@ Pair * nextTreeMap(TreeMap * tree) {
 Pair * upperBound(TreeMap * tree, void* key) {
 
     TreeNode * aux = tree->root;
-    TreeNode * ub_node = NULL;
+    TreeNode * ub_node = tree->root;
     while (aux != NULL){ // Mientras el nodo axuiliar exista
         if (is_equal(tree, aux->pair->key, key)) {
             tree->current = aux;
