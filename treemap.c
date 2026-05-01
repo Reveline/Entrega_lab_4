@@ -214,7 +214,7 @@ Pair * nextTreeMap(TreeMap * tree) {
     if (aux == NULL) return NULL;
     
     if(aux->right != NULL) {
-        aux = getMinimumNode(aux->right);
+        aux = minimum(aux->right);
     } else {
         // Si es el nodo es el hijo izquiero, entonces su padre sera el primer numero mayor que el (creo)
         while(aux->parent != NULL && aux->parent->right == aux){
