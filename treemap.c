@@ -246,7 +246,7 @@ Pair * upperBound(TreeMap * tree, void* key) {
 
     } // while (aux->left = NULL && aux->right = NULL)...
     
-    return ub_node;
+    return ub_node->pair;
     
 }
 
