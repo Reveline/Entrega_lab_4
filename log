@@ -452,3 +452,17 @@ treemap.c:146:35: error: ‘child’ undeclared (first use in this function)
   146 |             node->parent->right = child;
       |                                   ^~~~~
 ec6bf13
+Fri May  1 06:29:37 PM UTC 2026: 
+ treemap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:4:
+treemap.c: In function ‘removeNode’:
+treemap.c:141:46: error: ‘null’ undeclared (first use in this function)
+  141 |         if (node == tree->root) tree->root = null;
+      |                                              ^~~~
+treemap.c:141:46: note: each undeclared identifier is reported only once for each function it appears in
+treemap.c:145:9: error: expected ‘}’ before ‘else’
+  145 |         else
+      |         ^~~~
+14471f8
