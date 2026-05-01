@@ -61,8 +61,11 @@ Pair * searchTreeMap(TreeMap * tree, void* key) {
             tree->current = aux;
             return aux->pair;
         }
-        if (tree->lower_than(key, aux->pair->key)) aux = aux->left;
-        aux = aux->right;
+        if (tree->lower_than(key, aux->pair->key)){
+            aux = aux->left;
+        } else {
+            aux = aux->right;
+        }
         
     } // while (aux->left = NULL && aux->right = NULL)...
     return NULL;
@@ -72,6 +75,8 @@ Pair * searchTreeMap(TreeMap * tree, void* key) {
 // Esta función inserta un nuevo dato (key,value) en el árbol y hace que el current apunte al nuevo nodo. 
 // Para insertar un dato, primero debe realizar una búsqueda para encontrar donde debería ubicarse. 
 // Luego crear el nuevo nodo y enlazarlo. Si la clave del dato ya existe retorne sin hacer nada (recuerde que el mapa no permite claves repetidas).
+
+//void insert_space_found(TreeNode * aux, TreeNode* new_node){
 
 void insertTreeMap(TreeMap * tree, void* key, void * value) {
     TreeNode * aux = tree->root;
@@ -109,8 +114,13 @@ void insertTreeMap(TreeMap * tree, void* key, void * value) {
 // Si x no tiene hijo izquierdo se retorna el mismo nodo.
 
 TreeNode * minimum(TreeNode * x){
-
-    return NULL;
+    TreeNode * aux = x;
+    if (aux == NULL) return NULL;
+    while(aux->left != NULL){
+        aux = aux->left;
+    }
+    tree->current = aux
+    return aux;
 }
 
 // 5.- Implemente la función void removeNode(TreeMap * tree, TreeNode* node). 
